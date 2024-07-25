@@ -1,3 +1,4 @@
+
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -8,7 +9,11 @@ group = "com.github.liny70858"
 android {
     namespace = "com.liam.clickEffects"
     compileSdk = 34
-
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
     defaultConfig {
         minSdk = 24
 
