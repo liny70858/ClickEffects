@@ -1,9 +1,9 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-
+    id("maven-publish")
 }
-
+group = "com.github.liny70858"
 
 android {
     namespace = "com.liam.clickEffects"
