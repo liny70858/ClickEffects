@@ -1,8 +1,10 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+
 }
-group = "com.github.liny70858"
+
+
 android {
     namespace = "com.liam.clickEffects"
     compileSdk = 34
@@ -30,11 +32,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-
 }
 
 dependencies {
-    implementation("com.github.dcendents:android-maven-gradle-plugin:2.0")
+//    implementation("com.github.dcendents:android-maven-gradle-plugin:2.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
