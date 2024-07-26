@@ -49,10 +49,9 @@ afterEvaluate {
         publications {
             create<MavenPublication>("clickEffects") {
                 from(components["release"])
-                artifactId = tasks.javaToolchains.name
-                groupId = "com.github.liny70858"
-                artifactId = "clickEffects"
-                version = "0.0.0.1"
+//                groupId = "com.github.liny70858"
+//                artifactId = "clickEffects"
+//                version = "0.0.0.1"
             }
         }
 
