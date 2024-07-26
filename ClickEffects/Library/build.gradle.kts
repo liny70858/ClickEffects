@@ -53,3 +53,12 @@ afterEvaluate {
         }
     }
 }
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).all {
+    kotlinOptions {
+        jvmTarget = "17"
+
+        // For creation of default methods in interfaces
+        freeCompilerArgs = listOf("-Xjvm-default=all")
+    }
+}
