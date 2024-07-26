@@ -1,19 +1,19 @@
 import java.net.URI
 pluginManagement {
-    resolutionStrategy {
-        eachPlugin {
-            if (requested.id.namespace == "com.android.tools.build") {
-                useModule("com.android.tools.build:gradle:4.1.2")
-            }
-            if (requested.id.namespace == "org.jetbrains.kotlin") {
-                val kotlin_version = "1.9.0"
-                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
-            }
-            if (requested.id.namespace == "com.github.dcendents") {
-                useModule("com.github.dcendents:android-maven-gradle-plugin:1.5")
-            }
-        }
-    }
+//    resolutionStrategy {
+//        eachPlugin {
+//            if (requested.id.namespace == "com.android.tools.build") {
+//                useModule("com.android.tools.build:gradle:4.1.2")
+//            }
+//            if (requested.id.namespace == "org.jetbrains.kotlin") {
+//                val kotlin_version = "1.9.0"
+//                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
+//            }
+//            if (requested.id.namespace == "com.github.dcendents") {
+//                useModule("com.github.dcendents:android-maven-gradle-plugin:1.5")
+//            }
+//        }
+//    }
     repositories {
         google {
             content {
@@ -31,7 +31,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven { url = URI("https://jitpack.io") }
+        maven { url = uri("https://jitpack.io") }
     }
 }
 
