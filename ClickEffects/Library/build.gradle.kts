@@ -41,24 +41,24 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
-afterEvaluate {
-    publishing {
 
+afterEvaluate {
+
+    publishing {
         publications {
             create<MavenPublication>("clickEffects") {
                 from(components["release"])
-                artifactId = tasks.javaToolchains.name
                 groupId = "com.github.liny70858"
-                version = "0.0.0.2"
+                artifactId = "clickEffects"
+                version = "0.0.0.1"
             }
         }
-
         repositories {
             mavenCentral()
         }
     }
-
 }
+
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).all {
     kotlinOptions {
         jvmTarget = "17"
