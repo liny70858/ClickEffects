@@ -51,7 +51,7 @@ afterEvaluate {
                 from(components["release"])
                 artifactId = tasks.javaToolchains.name
                 groupId = "com.github.liny70858"
-                artifactId = "Library"
+                artifactId = "clickEffects"
                 version = "0.0.0.1"
             }
         }
