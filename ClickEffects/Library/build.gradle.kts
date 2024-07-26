@@ -1,3 +1,5 @@
+import java.net.URI
+
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -54,7 +56,15 @@ afterEvaluate {
         }
     }
 }
-
+// 发布仓库
+publishing {
+    repositories {
+        maven {
+            // change to point to your repo, e.g. http://my.org/repo
+            url = uri(layout.buildDirectory.dir("repo"))
+        }
+    }
+}
 dependencies {
 
     implementation(libs.androidx.core.ktx)
