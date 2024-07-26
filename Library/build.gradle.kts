@@ -1,8 +1,10 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("maven-publish")
 }
 group = "com.github.liny70858"
+
 android {
     namespace = "com.liam.clickEffects"
     compileSdk = 34
@@ -13,6 +15,7 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
+
 
     buildTypes {
         release {
@@ -30,7 +33,21 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-
+}
+afterEvaluate {
+    publishing {
+        publications {
+            // 创建一个名为 "release" 的 MavenPublication
+            create<MavenPublication>("release") {
+                // 从 components.release 获取组件
+                from(components["release"])
+                // 设置 Maven 坐标
+                groupId = "com.github.liny70858.clickEffects"
+                artifactId = "clickEffects"
+                version = "0.0.0.8"
+            }
+        }
+    }
 }
 
 dependencies {
