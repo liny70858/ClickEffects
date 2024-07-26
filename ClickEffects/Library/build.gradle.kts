@@ -49,7 +49,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.liny70858"
                 artifactId = "clickEffects"
-                version = "0.0.0.1"
+                version = "0.0.0.2"
             }
         }
 
