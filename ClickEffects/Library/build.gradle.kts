@@ -43,7 +43,6 @@ dependencies {
 }
 
 afterEvaluate {
-
     publishing {
         publications {
             create<MavenPublication>("clickEffects") {
@@ -53,10 +52,12 @@ afterEvaluate {
                 version = "0.0.0.1"
             }
         }
+
         repositories {
             mavenCentral()
         }
     }
+
 }
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).all {
