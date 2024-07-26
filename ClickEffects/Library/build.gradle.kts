@@ -42,7 +42,7 @@ afterEvaluate {
                 // 设置 Maven 坐标
                 groupId = "com.github.liny70858.clickEffects"
                 artifactId = "clickEffects"
-                version = "0.0.0.13"
+                version = "0.0.0.15"
 
                 versionMapping {
                     usage("java-api") {
@@ -61,7 +61,7 @@ publishing {
     repositories {
         maven {
             // change to point to your repo, e.g. http://my.org/repo
-            url = uri(layout.buildDirectory.dir("repo"))
+            url = uri("https://github.com/liny70858/ClickEffects.git")
         }
     }
 }
