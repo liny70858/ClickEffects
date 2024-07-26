@@ -35,29 +35,31 @@ android {
     }
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("mavenJava") {
-                versionMapping {
-                    usage("java-api") {
-                        fromResolutionOf("runtimeClasspath")
-                    }
-                    usage("java-runtime") {
-                        fromResolutionResult()
-                    }
+//afterEvaluate {
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            versionMapping {
+                usage("java-api") {
+                    fromResolutionOf("runtimeClasspath")
+                }
+                usage("java-runtime") {
+                    fromResolutionResult()
                 }
             }
         }
-        repositories {
-            maven {
-                // change to point to your repo, e.g. http://my.org/repo
-                url = uri("https://github.com/liny70858/ClickEffects.git")
-            }
+    }
+    repositories {
+        maven {
+            // change to point to your repo, e.g. http://my.org/repo
+            url = uri("https://github.com/liny70858/ClickEffects.git")
         }
     }
 }
-
+//}
+tasks.publish {
+    dependsOn("check")
+}
 dependencies {
 
     implementation(libs.androidx.core.ktx)
