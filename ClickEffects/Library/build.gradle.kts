@@ -27,44 +27,36 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "1.8"
     }
 }
-publishing {
-    repositories {
-        maven {
-            // change to point to your repo, e.g. http://my.org/repo
-            url = uri("https://github.com/liny70858/ClickEffects.git")
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("mavenJava") {
+                versionMapping {
+                    usage("java-api") {
+                        fromResolutionOf("runtimeClasspath")
+                    }
+                    usage("java-runtime") {
+                        fromResolutionResult()
+                    }
+                }
+            }
+        }
+        repositories {
+            maven {
+                // change to point to your repo, e.g. http://my.org/repo
+                url = uri("https://github.com/liny70858/ClickEffects.git")
+            }
         }
     }
 }
-//afterEvaluate {
-    // 发布仓库
-
-//    publishing {
-//        publications {
-//            create<MavenPublication>("mavenJava") {
-//                // 设置 Maven 坐标
-//                groupId = "com.github.liny70858.clickEffects"
-//                artifactId = "clickEffects"
-//                version = "0.0.0.15"
-//
-//                versionMapping {
-//                    usage("java-api") {
-//                        fromResolutionOf("runtimeClasspath")
-//                    }
-//                    usage("java-runtime") {
-//                        fromResolutionResult()
-//                    }
-//                }
-//            }
-//        }
-//    }
-//}
 
 dependencies {
 
