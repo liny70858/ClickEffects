@@ -64,9 +64,9 @@ afterEvaluate {
                 version = "0.0.0.1"
             }
         }
-        repositories {
-            mavenCentral()
-        }
+//        repositories {
+//            mavenCentral()
+//        }
     }
 }
 
