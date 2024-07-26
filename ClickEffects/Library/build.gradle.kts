@@ -42,7 +42,7 @@ afterEvaluate {
                 // 设置 Maven 坐标
                 groupId = "com.github.liny70858.clickEffects"
                 artifactId = "clickEffects"
-                version = "0.0.0.8"
+                version = "0.0.0.10"
             }
         }
     }
