@@ -36,5 +36,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "ClickEffects"
-include(":app")
 include(":Library")
