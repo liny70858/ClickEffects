@@ -41,11 +41,24 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
+
+//publishing {
+//    publications {
+//        register("release", MavenPublication::class) {
+//            from(components["release"])
+//            groupId = "com.github.liny70858"
+//            artifactId = "clickEffects"
+//            version = "0.0.0.1"
+//        }
+//    }
+//}
 afterEvaluate {
+
     publishing {
         publications {
-            register("release", MavenPublication::class) {
+            create<MavenPublication>("clickEffects") {
                 from(components["release"])
+
                 groupId = "com.github.liny70858"
                 artifactId = "clickEffects"
                 version = "0.0.0.1"
