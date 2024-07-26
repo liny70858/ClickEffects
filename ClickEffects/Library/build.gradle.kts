@@ -34,29 +34,6 @@ android {
         jvmTarget = "11"
     }
 }
-
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("mavenJava") {
-                // 设置 Maven 坐标
-                groupId = "com.github.liny70858.clickEffects"
-                artifactId = "clickEffects"
-                version = "0.0.0.15"
-
-                versionMapping {
-                    usage("java-api") {
-                        fromResolutionOf("runtimeClasspath")
-                    }
-                    usage("java-runtime") {
-                        fromResolutionResult()
-                    }
-                }
-            }
-        }
-    }
-}
-// 发布仓库
 publishing {
     repositories {
         maven {
@@ -65,6 +42,30 @@ publishing {
         }
     }
 }
+//afterEvaluate {
+    // 发布仓库
+
+//    publishing {
+//        publications {
+//            create<MavenPublication>("mavenJava") {
+//                // 设置 Maven 坐标
+//                groupId = "com.github.liny70858.clickEffects"
+//                artifactId = "clickEffects"
+//                version = "0.0.0.15"
+//
+//                versionMapping {
+//                    usage("java-api") {
+//                        fromResolutionOf("runtimeClasspath")
+//                    }
+//                    usage("java-runtime") {
+//                        fromResolutionResult()
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
+
 dependencies {
 
     implementation(libs.androidx.core.ktx)
