@@ -42,32 +42,25 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 }
 
-//publishing {
-//    publications {
-//        register("release", MavenPublication::class) {
-//            from(components["release"])
-//            groupId = "com.github.liny70858"
-//            artifactId = "clickEffects"
-//            version = "0.0.0.1"
-//        }
-//    }
-//}
 afterEvaluate {
 
     publishing {
+
         publications {
             create<MavenPublication>("clickEffects") {
                 from(components["release"])
-
+                artifactId = tasks.javaToolchains.name
                 groupId = "com.github.liny70858"
                 artifactId = "clickEffects"
                 version = "0.0.0.1"
             }
+
         }
         repositories {
             mavenCentral()
         }
     }
+
 }
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).all {
