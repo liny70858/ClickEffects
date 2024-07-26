@@ -41,17 +41,15 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
-
 afterEvaluate {
-
     publishing {
 
         publications {
             create<MavenPublication>("clickEffects") {
                 from(components["release"])
-//                groupId = "com.github.liny70858"
-//                artifactId = "clickEffects"
-//                version = "0.0.0.1"
+                groupId = "com.github.liny70858"
+                artifactId = "clickEffects"
+                version = "0.0.0.1"
             }
         }
 
@@ -61,7 +59,6 @@ afterEvaluate {
     }
 
 }
-
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).all {
     kotlinOptions {
         jvmTarget = "17"
