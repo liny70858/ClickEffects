@@ -54,6 +54,10 @@ afterEvaluate {
         }
 
         repositories {
+            maven {
+                name = "clickEffects"
+                url = uri("https://github.com/liny70858/ClickEffects.git")
+            }
             mavenCentral()
         }
     }
