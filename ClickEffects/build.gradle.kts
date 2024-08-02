@@ -3,5 +3,6 @@ plugins {
     alias(libs.plugins.androidApplication) apply false
     alias(libs.plugins.jetbrainsKotlinAndroid) apply false
     alias(libs.plugins.androidLibrary) apply false
-    id("com.github.dcendents.android-maven") version("1.5") apply(false)
+    id("maven-publish") apply (true)
+//    id("com.github.dependents.android-maven") version("1.5") apply(true)
 }

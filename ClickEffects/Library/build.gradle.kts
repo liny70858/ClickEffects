@@ -3,7 +3,7 @@ import java.net.URI
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    id("maven-publish")
+    id("maven-publish") apply (true)
 }
 android {
     namespace = "com.liam.clickEffects"
